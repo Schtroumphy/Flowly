@@ -1,39 +1,129 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Flowly
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages). 
+A budgetting app
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages). 
--->
+## 🌟 **Features** 🌟
+- **Budgetting**: User can create monthly budgets
+.
+.
+.
+- **Reactive State Management**: State management with **Riverpod** ensures reactive updates across the app.
+- **Offline Persistence**: Local storage using **SQFlite** for data caching and offline capabilities.
+- **Modular Design**: Clean Architecture enables modular and testable code.
+- **Cross-Platform UI**: The app runs seamlessly on Android, iOS and web.
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+---
+## 🖼️ Some captures
+ ...
 
-## Features
+---
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+## 🛠️ **Technologies Used**
 
-## Getting started
+### Flutter Framework
+- **Dart**: Language used for the Flutter framework.
+- **Flutter**: For building cross-platform UI.
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+### State Management
+- **Riverpod Generator**: Used for state management with compile-time safety and code generation.
 
-## Usage
+### Local Database
+- **SQFlite**: Lightweight SQLite wrapper for local database storage.
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+### Architecture
+- **Clean Architecture**:
+  - Separation of concerns with layers: `Presentation`, `Domain`, and `Data`.
+  - Decoupling business logic from UI and data sources.
 
-```dart
-const like = 'sample';
+---
+
+## 🚀 **Getting Started**
+### Prerequisites
+Ensure you have the following installed:
+- Flutter SDK (v3.27.3+)
+- Dart (v3.6.1+)
+- Android Studio / VS Code with Flutter plugin
+
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Schtroumphy/Flowly.git
+   cd Workinax
+   ```
+
+2. Install dependencies:
+   ```bash
+   flutter pub get
+   ```
+   
+3. Generate code:
+   ```bash
+   flutter pub run build_runner build -d
+   ```
+   
+5. Run project
+   ```bash
+   flutter pub run
+   ```
+---
+
+## 🗂️ **Project structure**
+The project is structured based on **Clean Architecture** principles with additional folders for shared components and specific feature modules.
+
+```plaintext
+root/
+├── mobile/                       # Package for the mobile application (Android/iOS)
+│   ├── lib/
+│   │   ├── main.dart             # Entry point for the mobile app
+│   │   ├── screens/              # Screens specific to mobile
+│   │   ├── widgets/              # Widgets specific to mobile
+│   │   └── themes/               # Themes specific to mobile
+│   ├── android/                  # Android-specific configuration
+│   ├── ios/                      # iOS-specific configuration
+│   ├── pubspec.yaml              # Dependencies for the mobile package
+│   └── ...                       # Other necessary files
+├── backoffice/                   # Package for the backoffice (Web/Desktop)
+│   ├── lib/
+│   │   ├── main.dart             # Entry point for the backoffice
+│   │   ├── screens/              # Screens specific to the backoffice
+│   │   ├── widgets/              # Widgets specific to the backoffice
+│   │   └── themes/               # Themes specific to the backoffice
+│   ├── web/                      # Web-specific configuration
+│   ├── desktop/                  # Desktop-specific configuration
+│   ├── pubspec.yaml              # Dependencies for the backoffice package
+│   └── ...
+├── lib/                          # Common package containing shared logic
+│   ├── features/                 # Logic grouped by feature
+│   │   ├── auth/                 # Example: authentication management
+│   │   ├── finance/              # Example: budget/finance management
+│   │   └── ...
+│   ├── widgets/                  # Reusable widgets
+│   ├── services/                 # Shared services (APIs, DB, etc.)
+│   ├── models/                   # Shared data models
+│   ├── utils/                    # Shared utility functions
+│   └── pubspec.yaml              # Dependencies for the common package
+├── pubspec.yaml                  # Global dependencies (package management)
+└── README.md                     # Project documentation
+
 ```
 
-## Additional information
+## Data model
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+![Data model](https://github.com/user-attachments/assets/29cf2431-cae4-47a4-af44-631aa1edfd00)
+
+---
+
+## ☑️ Test coverage
+
+__Generate & open coverage__
+
+```shell script
+$ flutter test --coverage
+$ lcov --remove coverage/lcov.info 'lib/*/*.g.dart' 'lib/core/constants/*.dart' 'lib/theme/*.dart' -o coverage/lcov.info
+$ genhtml coverage/lcov.info -o coverage/html
+$ open coverage/html/index.html
+```
+
+## Backlog
+
+- ...
