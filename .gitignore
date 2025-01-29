@@ -8,3 +8,6 @@ pubspec.lock
 
 .idea/
 *.iml
+
+# FVM Version Cache
+.fvm/
